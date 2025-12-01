@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cristian Quintero – Consultor en Lácteos, Bebidas y Alimentos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Consultoría especializada en industria láctea, alimentos y bebidas: optimización de procesos, diseño de equipos, mejora de rendimiento y reducción de costos.">
+  <style>
+    :root {
+      --color-primario: #0b1120;   /* azul noche industrial */
+      --color-secundario: #1f2937; /* gris acero */
+      --color-acento: #f59e0b;     /* dorado técnico */
+      --color-fondo: #020617;      /* fondo principal oscuro */
+      --color-texto: #e5e7eb;      /* gris muy claro para texto */
+      --color-texto-suave: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: radial-gradient(circle at 0% 0%, #111827, var(--color-primario));
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      color: #cbd5f5;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-acento);
+    }
+
+    /* Hero */
+   .hero {
+  background: linear-gradient(
+              135deg,
+              rgba(255,255,255,0.35),
+              rgba(230,239,255,0.35)
+            ),
+            url("banner1.png") center/cover no-repeat;
+  color: #0c2d48;
+  padding: 5rem 0 6rem;
+  border-bottom: 1px solid #dbe1ea;
+}
+
+    .hero-contenido {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      color: var(--color-acento);
+    }
+
+    .hero p {
+      font-size: 1rem;
+      max-width: 520px;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+  background: var(--color-secundario);          /* mismo color del botón principal */
+  color: #ffffff;                               /* texto blanco */
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;                             /* igual que el botón */
+  border: none;                                 /* sin borde */
+  box-shadow: 0 8px 18px rgba(20,93,160,0.35);  /* misma sombra */
+}
+
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
+    }
+
+    .btn-principal {
+  background: var(--color-secundario);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(20,93,160,0.35);
+}
+
+    .btn-principal:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+      background: #fbbf24;
+    }
+
+    .btn-secundario {
+      background: transparent;
+      border: 1px solid rgba(248,250,252,0.75);
+      color: #e5e7eb;
+    }
+
+    .btn-secundario:hover {
+      background: rgba(15,23,42,0.7);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 0% 0%, rgba(248,250,252,0.06), rgba(15,23,42,0.96));
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(148,163,184,0.55);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #e5e7eb;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .hero-card li {
+      margin-bottom: 0.35rem;
+      color: #d1d5db;
+    }
+
+    .hero-card li::before {
+      content: "▸ ";
+      color: var(--color-acento);
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    h2.section-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e5e7eb;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 2px;
+      margin: 0.6rem auto 0;
+      background: linear-gradient(to right, var(--color-acento), transparent);
+    }
+
+    p.section-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      max-width: 620px;
+      margin: 0.8rem auto 2rem;
+      color: var(--color-texto-suave);
+    }
+
+    /* Bandas de secciones */
+    #sobre {
+      background: #020617;
+      border-top: 1px solid #111827;
+    }
+
+    #servicios {
+      background: #020617;
+      border-top: 1px solid #111827;
+    }
+
+    #sectores {
+      background: #020617;
+      border-top: 1px solid #111827;
+    }
+
+    #contacto {
+      background: #020617;
+      border-top: 1px solid #111827;
+      border-bottom: 1px solid #111827;
+    }
+
+    /* Sobre mí */
+    .sobre {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .sobre-card {
+      background: #020617;
+      padding: 1.6rem;
+      border-radius: 1rem;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.85);
+      font-size: 0.95rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sobre-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border-left: 3px solid var(--color-acento);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .sobre-card h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #e5e7eb;
+    }
+
+    .sobre-card p {
+      color: #d1d5db;
+    }
+
+    .sobre-card ul {
+      margin-left: 1.1rem;
+      margin-top: 0.7rem;
+      color: #cbd5f5;
+    }
+
+    /* Servicios */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.7rem;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1.4rem;
+      box-shadow: 0 18px 50px rgba(15,23,42,0.9);
+      font-size: 0.93rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border-top: 3px solid rgba(245,158,11,0.85);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.5rem;
+      color: #e5e7eb;
+    }
+
+    .card p {
+      color: #cbd5f5;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.9rem;
+    }
+
+    .chip {
+      background: #1e293b;
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    /* Sectores */
+    .sectores {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .sector {
+      background: #020617;
+      padding: 1.1rem;
+      border-radius: 0.9rem;
+      text-align: left;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sector::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border-left: 3px solid rgba(96,165,250,0.85);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .sector span {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 0.82rem;
+    }
+
+    .sector {
+      color: #d1d5db;
+    }
+
+    /* Contacto */
+    .contacto {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contacto-info p {
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+      color: #d1d5db;
+    }
+
+    .contacto-datos {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      color: #cbd5f5;
+    }
+
+    .contacto-datos p {
+      margin-bottom: 0.25rem;
+    }
+
+    .contacto-datos a {
+      color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    .contacto-datos a:hover {
+      color: var(--color-acento);
+    }
+
+    .contacto-card {
+      background: #020617;
+      padding: 1.6rem;
+      border-radius: 1rem;
+      box-shadow: 0 18px 50px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .contacto-card input,
+    .contacto-card textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(148,163,184,0.6);
+      margin-bottom: 0.7rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    .contacto-card input::placeholder,
+    .contacto-card textarea::placeholder {
+      color: #64748b;
+    }
+
+    .contacto-card small {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--color-texto-suave);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      background: #020617;
+    }
+
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--color-acento);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-contenido,
+      .sobre,
+      .grid,
+      .sectores,
+      .contacto {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .sectores {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        text-align: left;
+      }
+
+      .botones {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .sectores {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <div class="contenedor nav">
+      <div class="logo">
+        Cristian Quintero · Consultoría Lácteos &amp; Alimentos
+      </div>
+      <nav class="nav-links">
+        <a href="#sobre">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sectores">Sectores</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Portada -->
+  <section class="hero">
+    <div class="contenedor hero-contenido">
+      <div>
+        <h1>
+          Consultoría técnica para la industria<br>
+          <span>láctea, de alimentos y bebidas</span>
+        </h1>
+        <p>
+          Acompaño a plantas y proyectos en la industria láctea, de alimentos y bebidas
+          a mejorar sus procesos, reducir costos y diseñar soluciones de ingeniería
+          eficientes y escalables.
+        </p>
+
+        <div class="badges">
+          <div class="badge">+13 años de experiencia</div>
+          <div class="badge">Procesos industriales</div>
+          <div class="badge">Diseño de equipos</div>
+        </div>
+
+        <div class="botones">
+          <a class="btn btn-principal" href="https://wa.me/573218360690" target="_blank">
+            Agenda una reunión por WhatsApp
+          </a>
+          <a class="btn btn-secundario" href="#servicios">
+            Ver servicios de consultoría
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Resultados que obtienen mis clientes</h3>
+        <ul>
+          <li>Reducción de costos operativos en líneas de producción.</li>
+          <li>Mejora del rendimiento y capacidad instalada.</li>
+          <li>Implementación de nuevos procesos y tecnologías.</li>
+          <li>Diseño y selección de equipos para proyectos nuevos o ampliaciones.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre">
+    <div class="contenedor">
+      <h2 class="section-title">Sobre la consultoría</h2>
+      <p class="section-subtitle">
+        Acompañamiento técnico y estratégico para la toma de decisiones en plantas
+        de producción láctea, de alimentos y bebidas.
+      </p>
+
+      <div class="sobre">
+        <div>
+          <div class="sobre-card">
+            <h3>¿Quién lidera la consultoría?</h3>
+            <p>
+              Soy <strong>Cristian Quintero</strong>, ingeniero de procesos con más de
+              <strong> 13 años de experiencia</strong> en la industria láctea, cerveza,
+              alimentos y bebidas, así como en el
+              <strong>diseño de equipos y soluciones de ingeniería</strong>.
+            </p>
+            <p>
+              He participado en proyectos de implementación de líneas de proceso,
+              optimización de plantas existentes y desarrollo de soluciones a la medida
+              para pequeños, medianos y grandes productores.
+            </p>
+            <ul>
+              <li>Experiencia en procesos térmicos, filtración, mezclas y CIP.</li>
+              <li>Acompañamiento desde la idea hasta la puesta en marcha.</li>
+              <li>Enfoque en seguridad alimentaria, calidad y rentabilidad.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sobre-card">
+          <h3>¿Cómo te puedo ayudar?</h3>
+          <p>
+            El enfoque de la consultoría es práctico: visitar tu planta (o hacerlo
+            de forma remota), entender tu realidad y proponerte alternativas claras
+            con impacto medible.
+          </p>
+          <p>
+            Podemos trabajar por proyecto, por horas de acompañamiento o en esquemas
+            de soporte continuo según el tamaño de tu operación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <div class="contenedor">
+      <h2 class="section-title">Servicios de consultoría</h2>
+      <p class="section-subtitle">
+        Servicios modulares que se adaptan a las necesidades de tu planta o proyecto.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Diagnóstico de planta y procesos</h3>
+          <p>
+            Análisis técnico del estado actual de tus procesos productivos: cuellos
+            de botella, pérdidas, rendimientos, consumos y oportunidades de mejora.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Lácteos</span>
+            <span class="chip">Bebidas</span>
+            <span class="chip">Alimentos</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Optimización y reducción de costos</h3>
+          <p>
+            Propuestas para mejorar la eficiencia de equipos y procesos, reduciendo
+            desperdicios, reprocesos, consumos de agua, energía y materias primas.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Eficiencia</span>
+            <span class="chip">Costos</span>
+            <span class="chip">KPIs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Diseño y selección de equipos</h3>
+          <p>
+            Apoyo en el diseño de soluciones a la medida y en la selección de equipos
+            para nuevas líneas, ampliaciones o modernización de procesos.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Tanques</span>
+            <span class="chip">Filtración</span>
+            <span class="chip">Sistemas CIP</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Implementación de nuevos productos</h3>
+          <p>
+            Acompañamiento en el desarrollo e industrialización de nuevos productos
+            lácteos, bebidas o alimentos, considerando viabilidad técnica y productiva.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Escalamiento</span>
+            <span class="chip">Pruebas piloto</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Soporte a proyectos de inversión</h3>
+          <p>
+            Evaluación técnica de propuestas comerciales, layouts, P&amp;ID, capacidades y
+            alternativas de proveedores para proyectos nuevos o ampliaciones.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Capex</span>
+            <span class="chip">Layout</span>
+            <span class="chip">Ingeniería</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Capacitación técnica</h3>
+          <p>
+            Entrenamientos prácticos para tu equipo en operación de procesos,
+            buenas prácticas, puntos críticos de control y cultura de mejora continua.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Operadores</span>
+            <span class="chip">Supervisores</span>
+            <span class="chip">BPM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectores -->
+  <section id="sectores">
+    <div class="contenedor">
+      <h2 class="section-title">Sectores de enfoque</h2>
+      <p class="section-subtitle">
+        Conocimiento específico en diferentes segmentos de la industria de alimentos y bebidas.
+      </p>
+
+      <div class="sectores">
+        <div class="sector">
+          <span>Lácteos</span>
+          Leches, derivados, mezclas lácteas, bebidas lácteas, productos fermentados.
+        </div>
+        <div class="sector">
+          <span>Cerveza y bebidas</span>
+          Cerveza artesanal e industrial, bebidas carbonatadas y no carbonatadas.
+        </div>
+        <div class="sector">
+          <span>Alimentos procesados</span>
+          Productos listos para consumir, salsas, mezclas líquidas y semilíquidas.
+        </div>
+        <div class="sector">
+          <span>Proyectos piloto</span>
+          Pruebas a pequeña escala, validación de procesos y tecnologías.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="contenedor">
+      <h2 class="section-title">Hablemos de tu proyecto</h2>
+      <p class="section-subtitle">
+        Cuéntame brevemente tu situación actual y coordinamos una reunión técnica para revisar opciones.
+      </p>
+
+      <div class="contacto">
+        <div class="contacto-info">
+          <p>
+            Puedes escribirme por <strong>WhatsApp</strong>, correo electrónico o mensaje
+            directo en <strong>Instagram</strong>. Respondo habitualmente en menos de 24 horas.
+          </p>
+
+          <div class="botones" style="margin-top: 1rem;">
+            <a class="btn btn-principal" href="https://wa.me/573218360690" target="_blank">
+              Contactar por WhatsApp
+            </a>
+            <a class="btn btn-secundario" href="mailto:ccqt17@gmail.com">
+              Enviar correo
+            </a>
+          </div>
+
+          <div class="contacto-datos">
+            <p><strong>Correo:</strong> <a href="mailto:ccqt17@gmail.com">ccqt17@gmail.com</a></p>
+            <p><strong>WhatsApp:</strong> +57 321 836 0690</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cristian-quintero-9bb2605b" target="_blank">linkedin.com/in/cristian-quintero-9bb2605b</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/@ccqt17" target="_blank">@ccqt17</a></p>
+            <p><strong>Ubicación:</strong> Consultoría remota y presencial (según acuerdo).</p>
+          </div>
+        </div>
+
+      <div class="contacto-card">
+  <p><strong>Formulario de contacto</strong></p>
+  <p style="margin-bottom: 0.7rem;">
+    Completa el formulario y recibiré tu mensaje directamente en mi correo.
+  </p>
+
+  <form action="https://formsubmit.co/ccqt17@gmail.com" method="POST">
+    <input type="text" name="empresa" placeholder="Nombre de la empresa" required>
+    <input type="text" name="contacto" placeholder="Nombre de contacto" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <textarea name="mensaje" rows="4" placeholder="Cuéntame brevemente tu proyecto o necesidad..." required></textarea>
+
+    <!-- Opcional: cambiar la página de gracias -->
+    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+
+    <!-- Opcional: asunto del correo que te llega -->
+    <input type="hidden" name="_subject" value="Nuevo contacto desde la web de consultoría">
+
+    <button class="btn btn-principal" type="submit">
+      Enviar mensaje
+    </button>
+  </form>
+
+  <small>
+    También puedes contactarme directamente por WhatsApp o correo utilizando los botones de la izquierda.
+  </small>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Cristian Quintero · Consultoría en Industria Láctea, Alimentos y Bebidas.
+    Desarrollado para proyectos de alto impacto.  
+    Sitio web enlazado a <a href="https://instagram.com/@ccqt17" target="_blank">Instagram</a>.
+  </footer>
+
+  <script>
+    // Actualiza el año automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
