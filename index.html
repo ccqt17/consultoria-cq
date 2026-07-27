@@ -52,25 +52,97 @@
     }
 
     .logo {
-      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      border-radius: 0.65rem;
+      background: linear-gradient(135deg, var(--color-acento), #d97706);
+      color: #0b1120;
+      font-weight: 800;
       font-size: 1.05rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 14px rgba(245,158,11,0.35);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #e5e7eb;
       white-space: nowrap;
     }
 
+    .logo-title .acento {
+      color: var(--color-acento);
+    }
+
+    .logo-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
     .nav-links a {
       color: #cbd5f5;
       text-decoration: none;
-      margin-left: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.25);
+      background: rgba(255,255,255,0.04);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--color-acento);
+      color: #0b1120;
+      background: var(--color-acento);
+      border-color: var(--color-acento);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(245,158,11,0.35);
+    }
+
+    .nav-links a[target="_blank"] {
+      border-color: rgba(245,158,11,0.35);
+    }
+
+    .nav-links a.nav-destacado {
+      background: var(--color-acento);
+      color: #0b1120;
+      border-color: var(--color-acento);
+    }
+
+    .nav-links a.nav-destacado:hover {
+      background: #fbbf24;
+      color: #0b1120;
     }
 
     /* Hero */
@@ -80,7 +152,7 @@
               rgba(255,255,255,0.35),
               rgba(230,239,255,0.35)
             ),
-            url("banner1.png") center/cover no-repeat;
+            url("banner1-optimizado.jpg") center/cover no-repeat;
   color: #0c2d48;
   padding: 5rem 0 6rem;
   border-bottom: 1px solid #dbe1ea;
@@ -128,6 +200,18 @@
   box-shadow: 0 8px 18px rgba(20,93,160,0.35);  /* misma sombra */
 }
 
+    .badge-nuevo {
+      background: var(--color-acento);
+      color: #0b1120;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(245,158,11,0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .badge-nuevo:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(245,158,11,0.5);
     }
 
     .botones {
@@ -292,6 +376,35 @@
       color: #e5e7eb;
     }
 
+    .perfil-header {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .perfil-header h3 {
+      margin-bottom: 0.3rem;
+    }
+
+    .foto-perfil {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--color-acento);
+      box-shadow: 0 8px 20px rgba(245,158,11,0.3);
+    }
+
+    .perfil-rol {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-texto-suave);
+    }
+
     .sobre-card p {
       color: #d1d5db;
     }
@@ -354,6 +467,98 @@
       font-size: 0.8rem;
       color: #e5e7eb;
       border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    /* Producto insignia */
+    .producto-insignia {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.8rem;
+      background: radial-gradient(circle at 100% 0%, rgba(245,158,11,0.14), rgba(2,6,23,0.98));
+      border: 1.5px solid rgba(245,158,11,0.55);
+      border-radius: 1.2rem;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 25px 60px rgba(245,158,11,0.12), 0 18px 45px rgba(15,23,42,0.9);
+      overflow: hidden;
+    }
+
+    .producto-insignia::before {
+      content: "";
+      position: absolute;
+      top: -45%;
+      right: -8%;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,158,11,0.28), transparent 70%);
+      pointer-events: none;
+    }
+
+    .producto-insignia-texto {
+      position: relative;
+      z-index: 1;
+      flex: 1 1 380px;
+    }
+
+    .badge-insignia {
+      display: inline-block;
+      background: var(--color-acento);
+      color: #0b1120;
+      font-weight: 800;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+    }
+
+    .producto-insignia h3 {
+      font-size: 1.45rem;
+      color: #ffffff;
+      margin-bottom: 0.7rem;
+      line-height: 1.3;
+    }
+
+    .producto-insignia h3 span {
+      color: var(--color-acento);
+    }
+
+    .producto-insignia p {
+      color: #cbd5f5;
+      font-size: 0.95rem;
+      max-width: 560px;
+    }
+
+    .producto-insignia-cta {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .producto-insignia {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.6rem;
+      }
+
+      .producto-insignia-cta {
+        align-items: stretch;
+        width: 100%;
+      }
+
+      .producto-insignia-cta .btn {
+        text-align: center;
+      }
     }
 
     /* Sectores */
@@ -516,6 +721,12 @@
       .nav-links {
         display: flex;
         flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .nav-links a {
+        font-size: 0.72rem;
+        padding: 0.45rem 0.85rem;
       }
 
       .hero {
@@ -531,7 +742,8 @@
         grid-template-columns: 1fr;
       }
 
-      .logo {
+      .logo-title,
+      .logo-sub {
         white-space: normal;
       }
     }
@@ -543,15 +755,20 @@
   <header>
     <div class="contenedor nav">
       <div class="logo">
-        Cristian Quintero · Consultoría Lácteos &amp; Alimentos
+        <span class="logo-badge">CQ</span>
+        <span class="logo-text">
+          <span class="logo-title">Process <span class="acento">Design</span></span>
+          <span class="logo-sub">Consultoría Lácteos &amp; Alimentos</span>
+        </span>
       </div>
    <nav class="nav-links">
   <a href="#sobre">Sobre mí</a>
+  <a href="#plataforma-ia" class="nav-destacado">Plataforma IA</a>
   <a href="#servicios">Servicios</a>
   <a href="#proyectos">Proyectos</a>
   <a href="#sectores">Sectores</a>
   <a href="#contacto">Contacto</a>
-  <a href="https://www.linkedin.com/in//cristian-quintero-9bb2605b" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://www.linkedin.com/in/cristian-quintero-9bb2605b" target="_blank" rel="noopener">LinkedIn</a>
 </nav>
     </div>
   </header>
@@ -571,6 +788,7 @@
         </p>
 
         <div class="badges">
+          <a href="#plataforma-ia" class="badge badge-nuevo">🚀 Nuevo: AI Food Plant Intelligence Platform</a>
           <div class="badge">+13 años de experiencia</div>
           <div class="badge">Procesos industriales</div>
           <div class="badge">Diseño de equipos</div>
@@ -610,7 +828,13 @@
       <div class="sobre">
         <div>
           <div class="sobre-card">
-            <h3>¿Quién lidera la consultoría?</h3>
+            <div class="perfil-header">
+              <img src="foto-cristian.jpg" alt="Cristian Quintero, fundador de CQ Process Design" class="foto-perfil">
+              <div>
+                <h3>¿Quién lidera la consultoría?</h3>
+                <span class="perfil-rol">Cristian Quintero · Fundador &amp; Ingeniero de Procesos</span>
+              </div>
+            </div>
             <p>
               Soy <strong>Cristian Quintero</strong>, ingeniero de procesos con más de
               <strong> 13 años de experiencia</strong> en la industria láctea, cerveza,
@@ -653,6 +877,31 @@
       <p class="section-subtitle">
         Servicios modulares que se adaptan a las necesidades de tu planta o proyecto.
       </p>
+
+      <div class="producto-insignia" id="plataforma-ia">
+        <div class="producto-insignia-texto">
+          <span class="badge-insignia">Producto insignia</span>
+          <h3>AI Food Plant <span>Intelligence Platform</span></h3>
+          <p>
+            Plataforma de inteligencia artificial especializada en la industria de alimentos:
+            genera borradores para más de 10 tipos de documentos técnicos —procedimientos
+            operativos, instructivos, fichas de equipo, planes CIP y de limpieza, planes HACCP
+            y de inocuidad, formatos y registros, indicadores, programas BPM y diagramas de
+            proceso— y los transforma en formatos visuales e interactivos adaptados a cada rol
+            de tu planta: Gerencia, Calidad, Supervisión, Operación y Auxiliares.
+          </p>
+          <div class="chip-row">
+            <span class="chip">POE / Instructivos</span>
+            <span class="chip">HACCP / Inocuidad</span>
+            <span class="chip">Planes CIP</span>
+            <span class="chip">Indicadores / BPM</span>
+            <span class="chip">Multi-rol</span>
+          </div>
+        </div>
+        <div class="producto-insignia-cta">
+          <a class="btn btn-principal" href="#contacto">Quiero conocer la plataforma</a>
+        </div>
+      </div>
 
       <div class="grid">
         <div class="card">
@@ -734,40 +983,6 @@
       </div>
     </div>
   </section>
-<!-- Proyectos -->
-<section id="proyectos">
-  <div class="contenedor">
-    <h2 class="section-title">Proyectos y experiencia</h2>
-    <p class="section-subtitle">
-      Algunos ejemplos de acompañamiento que realizo en la industria láctea, de alimentos y bebidas.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Optimización de planta láctea</h3>
-        <p>
-          Reducción de pérdidas y tiempos muertos en recepción, pasteurización y envasado,
-          con mejoras de rendimiento global de la línea superiores al 10%.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Diseño de línea de bebidas</h3>
-        <p>
-          Selección y dimensionamiento de equipos para una nueva línea de bebidas listas
-          para consumir, incluyendo intercambiadores de calor, tanques y sistemas de filtración.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Implementación de unidades piloto</h3>
-        <p>
-          Instalación y puesta en marcha de equipos piloto para validar procesos en café,
-          cerveza, siropes y lácteos, facilitando decisiones de inversión con datos reales.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Proyectos -->
 <section id="proyectos">
   <div class="contenedor">
@@ -899,8 +1114,8 @@
   </section>
 
   <footer>
-    &copy; <span id="year"></span> Cristian Quintero · Consultoría en Industria Láctea, Alimentos y Bebidas.
-    Desarrollado para proyectos de alto impacto.  
+    &copy; <span id="year"></span> CQ Process Design · Cristian Quintero — Consultoría en Industria Láctea, Alimentos y Bebidas.
+    Desarrollado para proyectos de alto impacto.
     Sitio web enlazado a <a href="https://instagram.com/@ccqt17" target="_blank">Instagram</a>.
   </footer>
 
